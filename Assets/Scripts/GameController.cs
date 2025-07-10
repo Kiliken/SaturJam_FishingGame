@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] Rigidbody playerRb;
     [SerializeField] Transform playerModel;
+
+    [NonSerialized] public bool isFishing = false;
 
 
     private Vector3 _mousePos;
@@ -23,7 +26,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Inputs();
+        if(!isFishing)
+            Inputs();
 
         if (playerRb.velocity.magnitude > 10f)
             playerRb.velocity = playerRb.velocity.normalized * 10f;
