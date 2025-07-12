@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
             Instantiate(hotspotPrefab, new Vector3(UnityEngine.Random.Range(-40f,40f), 0.05f, UnityEngine.Random.Range(-40f, 40f)), Quaternion.identity);
+
     }
 
     // Update is called once per frame
