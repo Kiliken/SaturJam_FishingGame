@@ -16,6 +16,7 @@ public class Hotspot : MonoBehaviour
         if (other.tag == "Player")
         {
             uiController.canFish = true;
+            uiController.currentHotspot = this.transform;
         }
     }
 
@@ -24,6 +25,7 @@ public class Hotspot : MonoBehaviour
         if (other.tag == "Player")
         {
             uiController.canFish = false;
+            uiController.currentHotspot = null;
         }
     }
 }
